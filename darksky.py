@@ -27,5 +27,6 @@ if __name__ == "__main__":
 	lcd = LCD.Adafruit_CharLCDPlate()
 
 	while True: 
-		print darksky()
-		time.sleep(3)
+		today = darksky()
+		lcd.message(today)
+		time.sleep(300)
