@@ -20,7 +20,7 @@ def darksky():
 	max = dataJSON['daily']['data'][0]['temperatureMax']
 	summary = dataJSON['daily']['data'][0]['summary']
 
-	return "C: %s, H: %s \n %s" % (curr, max, summary)
+	return "C: %s H: %s \n%s" % (curr, max, summary)
 
 if __name__ == "__main__":	
 
