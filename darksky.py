@@ -29,4 +29,4 @@ if __name__ == "__main__":
 	while True: 
 		today = darksky()
 		lcd.message(today)
-		time.sleep(300)
+		time.sleep(1800)
