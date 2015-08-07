@@ -9,9 +9,11 @@ import Adafruit_CharLCD as LCD
 def darksky():
 
 	header = {'Accept': 'application/json'}
-	url = 'https://api.forecast.io/forecast/fb80e65bbe2d80979524674aa1e4fe5b/38.9132,-77.0326'
+	baseurl = 'https://api.forecast.io/forecast/'
+	apikey = sys.argv[1]
+	location = '/38.9132,-77.0326'
 
-	data = requests.get(url, headers=header)
+	data = requests.get(baseurl + apikey + location, headers=header)
 	dataJSON = json.loads(data.text, encoding="utf-8")
 
 	curr = dataJSON['currently']['temperature']
@@ -22,7 +24,7 @@ def darksky():
 
 if __name__ == "__main__":	
 
-	#lcd = LCD.Adafruit_CharLCDPlate()
+	lcd = LCD.Adafruit_CharLCDPlate()
 
 	while True: 
 		print darksky()
